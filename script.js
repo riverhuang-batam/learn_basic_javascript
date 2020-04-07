@@ -124,3 +124,291 @@ q = j;
 
 console.log(k)
 console.log(q)
+
+
+let hour = 10
+if(hour >= 6 && hour <=12){
+    console.log('good morning');
+}
+else if(hour >=13 && hour <= 18){
+    console.log('good afternoon')
+}
+else{
+    console.log('good evenning')
+}
+
+let role = 'guest';
+switch (role){
+    case 'guest':
+        console.log("Guest User");
+        break;
+    case 'admin':
+        console.log('Admin User');
+        break;
+    default:
+        console.log('Unknown User')
+}
+
+const myContacts = [
+    {
+        id: 1, 
+        name: 'Alpha Avalon',
+        phone: '+1 111 101010',
+        email: 'alpha@avalon.org',
+        location: 'batam',
+        favorite: true,
+        rating: 9,
+        tags: ['popular', 'cool']
+    }, {
+        id: 2,
+        name: 'Betty Brave',
+        phone: '+62 812 242424',
+        location: 'batam',
+        email: 'betty@braverian.com',
+    }, {
+        id: 3,
+        name: 'Gamma Gacurio',
+        phone: '+63 813 363636',
+        location: 'batam',
+        email: 'gamma@gacurio.dev'
+    }
+]
+
+let newContact = {
+    id: 4,
+    name: 'howoh',
+    phone: '+1 132432 14324',
+}
+console.log(myContacts.map((contact) => console.log(contact)))
+console.log(myContacts.filter(contact => contact.location === 'batam'))
+myContacts.push(newContact)
+myContacts.pop()
+myContacts.splice()
+console.log(myContacts)
+
+for(let i = 0; i <= 5; i++){
+    if(i % 2 !== 0){
+        console.log(i)
+    }
+    console.log('hello world', i)
+}
+
+// let i = 0;
+// while(i <=5 ){
+//     if (i%2 !== 0){
+//         console.log(i);
+//         i++
+//     }
+// }
+
+
+// let i = 9;
+// do{
+//     if(i%2 !== 0){
+//         console.log(i)
+//         i++
+//     }
+// }
+// while (i <= 5)
+
+// let s = 0;
+// while(s < 5){
+//     console.log(s)
+// }
+
+
+const persons = {
+    name: 'Mosh',
+    age: 30,
+}
+
+for(let key in person){
+    console.log(key, person[key]);
+}
+
+const colors = ['red', 'green', 'blue']
+    for(let color in colors){
+        console.log(color, colors[color])
+    }
+    for(let color of colors){
+        console.log(color)
+    }
+
+// let o = 0;
+// while(o <= 10){
+    
+//     if(o === 5) break
+//     if( o % 2 === 0)
+//     console.log(o);
+//     o++
+// }
+
+
+let max = (number1, number2)=> {
+    return (number1 > number2) ? number1: number2;
+}
+let number = max(3,2);
+console.log(number)
+
+let isLandScape = (width, height) =>{
+    return (width > height);
+}
+console.log(isLandScape(800, 600))
+
+let fizzBuzz = (input) =>{
+    if(typeof input !== 'number'){
+        return NaN
+    }
+    else if(  input % 3 === 0 && input % 5 === 0) {
+        return 'fizzbuzz'
+    }
+    else if(input % 3 === 0) {
+        return 'fizz'
+    }
+    else if(input % 5 === 0) {
+        return 'buzz'
+    }
+    return input;
+}
+const output = fizzBuzz(7);
+console.log(output)
+
+checkSpeed(71);
+function checkSpeed(speed){
+    const speedLimit = 70
+    const kmPerPoint = 5
+    if(speed <= speedLimit + kmPerPoint){
+        console.log('ok');
+        return
+    }
+    
+        const points = Math.floor((speed - speedLimit) / kmPerPoint);
+        if(points >=12){
+            console.log('License Suspended')
+        } else {
+            console.log('Points', points)
+        }
+    
+}
+
+showNumbers(10);
+function showNumbers(limit){
+    for(let i = 0; i <= limit; i++){
+    if(i% 2 === 0){
+        console.log(i,'even')
+    }
+    else if(i % 1    === 0){
+        console.log(i, 'odd')
+    }
+    const message = (i%2 ===0) ? 'odd' : 'even'
+    console.log(message)
+}
+}
+
+let array = [1,2,3, undefined, '', 6]
+console.log(countTruthy(array)) 
+function countTruthy(array){
+    let counts = 0;
+    for(let value of array){
+        if(value){
+            counts++;
+            
+        }
+    }
+    return counts
+}
+
+const movie = {
+    title: 'a',
+    releaseYear: 2018,
+    rating: 4.5,
+    director: 'b'
+}
+showProperties(movie);
+
+function showProperties(obj){
+    for (let key in obj)
+    if(typeof obj[key] === 'string')
+    console.log(key, obj[key])
+}
+
+
+console.log(sum(10))
+function sum(limit){
+    let sum =0;
+    for (let i = 0; i <=limit; i++)
+        if(i % 3 === 0 || i % 5 === 0)
+        sum += i;
+
+    return sum;
+}
+
+const marks = [80, 80, 50];
+console.log(calculateGrade(marks));
+
+function calculateGrade(marks){
+    let sum = 0
+    for(let total_value of marks){
+        sum += total_value
+
+    }
+    let average = sum / marks.length;
+    
+    if (average < 60) return 'E';
+    if (average < 70) return 'D';
+    if (average < 80) return 'C';
+    if (average < 90) return 'B';
+    return 'A'
+}
+let showStars = (rows) => {
+    
+    for(let i = 0; i <= rows; i++){
+        let pattern = ''
+        for(let k = 0; k <= i; k++){
+            pattern += '*'
+            
+        }
+        console.log(pattern)
+    }
+}
+showStars(5)
+
+
+let starLimit = 10;
+for(let i = 0; i <= starLimit; i++){
+    let pattern = '\n'
+    for(let k = 0; k <= i; k++){
+        pattern += "*"
+    }
+    console.log(pattern)
+}
+let stars = 5;
+for (let i = 0; i <= stars; i++){
+    let pattern = ''
+    for (let k = 5; k >= i; k--){
+        pattern += ' '
+    }
+    for(let j = 0; j <= i; j++){
+        pattern += '*'
+    }
+    for(let q = 0; q < i; q++){
+        pattern += '*'
+    }
+    console.log(pattern)
+}
+
+
+let showPrimes = (limits) =>{
+    for(let number = 2; number <= limits; number++){
+        if(isPrime(number))console.log(number);
+    }
+} 
+let isPrime = (number) => {
+    for(let factor = 2; factor<number; factor++){
+        if(number % factor === 0){
+            return false;
+        }
+    }
+    return true;
+}
+showPrimes(20)
