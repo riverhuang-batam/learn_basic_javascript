@@ -1,3 +1,4 @@
+
 let name = 'River';
 console.log(name);
 console.log("hello world")
@@ -412,3 +413,174 @@ let isPrime = (number) => {
     return true;
 }
 showPrimes(20)
+
+//Object-oriented Programming (OOP)
+const circle = {
+    radius: 1,
+    location: {
+        x: 1,
+        y: 1,
+    },
+    isVisible: true,
+    draw: () => {
+        console.log('draw')
+    }
+}
+circle.draw()
+// Factory Function
+function createCircle(radius) {
+    return {
+        radius,
+        draw: () =>{
+            console.log('testing')
+        }
+    }   
+}
+const circle1 = createCircle(1);
+console.log(circle1)
+
+function Circle (radius) {
+    this.radius = radius;
+    this.draw = () =>{
+        console.log('draw')
+    }
+}
+const circle4 = new Circle(1);
+console.log(circle4)
+
+const circleOne = () =>{
+    radius: 1
+}
+
+circleOne.color= 'red'
+circleOne.draw = function(){}
+
+
+console.log(circleOne())
+
+
+const circle2 = {
+    radius: 1,
+    draw: () =>{
+        console.log('draw');
+    }
+}
+
+for (let key in circle2){
+    console.log(key, circle[key])
+}
+for (let key of Object.keys(circle2)){
+    console.log(key);
+}
+for (let entry of Object.entries(circle2)){
+    console.log(entry);
+}
+if('draw' in circle2){
+    console.log('yes')
+}
+
+// const another = {};
+// for(let key in circle2){
+//     another[key] = circle2[key]
+// }
+
+const another = Object.assign({}, circle);
+const another2 = {...circle2}
+console.log(another)
+console.log(another2)
+
+//string primitive
+const messages = 'this is my \' message \n test';
+
+//String object
+const another3 = new String('hi')
+
+
+const now = new Date();
+const date1 = new Date('may 11 2018 09:00')
+const date2 = new Date(2018, 4, 11 ,9, 15)
+
+now.setFullYear(2018)
+let address = {
+    street: 'a',
+    city: 'b',
+    zipCode: 'c'
+}
+function showAddress(address){
+    for(let key in address){
+        console.log(key, address[key])
+    }
+}
+
+showAddress(address)
+let addressone = new showAddressOne('a', 'b', 'c')
+let addresstwo = new ShowAddressConstructor('a', 'b', 'c')
+function showAddressOne(street, city, zipCode){
+    return{
+        street,
+        city,
+        zipCode
+    }
+}
+
+function ShowAddressConstructor(street, city, zipCode){
+    this.street= street,
+    this.city = city,
+    this.zipCode = zipCode
+
+}
+console.log(addressone)
+console.log(addresstwo)
+
+address1 = new Address('a', 'b', 'c')
+address2 = new Address('a', 'b', 'c')
+
+console.log(areEqual(address1, address2))
+console.log(areSame(address1, address1))
+function Address(street, city, zipCode){
+    this.street = street;
+    this.city = city;
+    this.zipCode= zipCode
+}
+function areEqual(address1, address2){
+    return address1.street === address2.street &&
+    address1.city === address2.city && 
+    address1.zipCode === address2.zipCode
+}
+function areSame(address1, address2){
+    return address1 === address2
+}
+
+let post = {
+    title: '1',
+    body: '1',
+    author: '2',
+    views: 1,
+    comments: [
+        {author: 'a', body:'b'},
+        {author: 'a', body:'b'},
+    ],
+    islive: true
+
+}
+console.log(post)
+
+let post2 = new Post('a', 'b', 'c')
+console.log(post2);
+function Post(title, body, author){
+    this.title= title,
+    this.body= body,
+    this.author= author,
+    this.views= 0,
+    this.comments= [],
+    islive=false
+}
+
+let priceRanges = [
+    {label: '$', tooltip: 'Inexpensive', minPerPerson: 0, maxPerPerson: 10},
+    {label: '$$', tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20},
+    {label: '$$$', tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 30},
+]
+let restaurants = [
+    {averagePerPerson: 5}
+]
