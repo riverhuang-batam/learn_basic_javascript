@@ -584,3 +584,12 @@ let priceRanges = [
 let restaurants = [
     {averagePerPerson: 5}
 ]
+
+const numbers = [3, 4];
+numbers.push(4, 6)
+numbers.unshift(1,5)
+numbers.splice(2, 0, 'a', 'b')
+console.log(numbers.indexOf(3))
+console.log(numbers.lastIndexOf(4))
+console.log(numbers.includes(1))
+console.log(numbers)
