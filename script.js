@@ -593,3 +593,29 @@ console.log(numbers.indexOf(3))
 console.log(numbers.lastIndexOf(4))
 console.log(numbers.includes(1))
 console.log(numbers)
+
+
+const courses = [
+    {id:1, name:'a'},
+    {id:2, name:'a'},
+];
+const course = courses.find(course => 
+    course.name === 'a'
+)
+console.log(course)
+
+let numberss = [1,2,3,4]
+// const last = numberss.pop();
+// const first = numberss.shift();
+numberss.splice(2,2 )
+console.log(numberss)
+
+
+ numberss = [];
+ console.log(numberss)
+
+ const first = [1, 2, 3]
+ const second = [4, 5, 6]
+
+ const combined = first.concat(second)
+ console.log(combined)
