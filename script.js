@@ -617,5 +617,83 @@ console.log(numberss)
  const first = [1, 2, 3]
  const second = [4, 5, 6]
 
- const combined = first.concat(second)
+//  const combined = first.concat(second)
+const combined = [...first,'a', ...second, 'b']
+
  console.log(combined)
+
+const numbers1 = [1, 2, 3]
+for(let number of numbers1){
+    console.log(number)
+}
+numbers1.forEach((number) => {
+    console.log(number)
+})
+
+const numbers2 = [1,2,3]
+const joined = numbers2.join(',');
+console.log(joined)
+
+const message1 = 'this is my first message';
+const parts = message1.split(' ')
+const combined1 = parts.join('-')
+console.log(parts)
+console.log(combined1)
+
+
+const numbers3 = [3,1,2]
+numbers3.sort();
+console.log(numbers3)
+numbers3.reverse()
+console.log(numbers3)
+
+
+const courses1 = [
+    {id: 2, name:'NOde.js'},
+    {id: 1, name:'Javascript'},
+]
+
+courses1.sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+})
+
+console.log(courses1)
+
+const numbers4 = [1, -1 ,2,3]
+
+const atLeastOnePositive = numbers4.some((value) =>{
+    return value >= 0
+})
+console.log(atLeastOnePositive);
+
+// const filtering = numbers4.filter((value) =>{
+//     return value >= 0
+// })
+// const itemsMap = filtering.map(n => ({ value: n}))
+// console.log(filtering);
+const itemsMap = numbers4
+    .filter(n => n >= 0)
+    .map(n => ({value: n}))
+console.log(itemsMap)
+
+
+
+const numbers6 = [1, -1, -2, 2, 3]
+
+// let sum1 = 0;
+// for (let n of numbers6){
+//     sum1  += n
+// }
+// const sum1 = numbers6.reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue
+// }, 0)
+const sum1 = numbers6.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+)
+
+console.log(sum1)
+
+
+
