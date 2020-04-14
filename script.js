@@ -696,4 +696,195 @@ const sum1 = numbers6.reduce(
 console.log(sum1)
 
 
+const numbers7 = arrayFromRange(-10, 4)
+console.log(numbers7)
+function arrayFromRange(min,max){
+    const output = [];
+    for (let i = min; i <= max; i++) {
+        output.push(i);
+        return output
+    }
+}
 
+const numbers8 = [1, 2, 3, 4]
+console.log(includes(numbers8 , -1));
+function includes(array, searchElement){
+    for(let element of array)
+        if(element === searchElement){
+            return true
+        }
+        return false;
+}
+
+const numbers9 = [1,2,3,4]
+const output1 = except(numbers9, [1])
+console.log(output1);
+function except(array, excluded){
+    const output1 = [];
+    for(let element of array)
+        if(!excluded.includes(element)){
+            output1.push(element)
+        }
+        return output1
+}
+
+
+const numbers10 = [1,2,3,4];
+const output2 = move(numbers10, 0,-1);
+console.log(output2)
+function move(array, index, offset){
+    const position = index + offset;
+    if(position >= array.length){
+        console.error('Invalid offset')
+        return;
+    }
+    
+    const output2 = [...array];
+    const elements = output2.splice(index, 1)[0];
+    output2.splice(position, 0, elements)
+    return output2
+
+}
+const numbers11 = [1,2,3,4,5,1]
+const count1 = countOccurences(numbers11, 1)
+console.log(count1)
+
+function countOccurences(array, searchElement){
+    // let count1 =0;
+    
+    // for(let element of array){
+    //     if(element === searchElement){
+    //         count1++
+    //     }
+    //     return count1
+    // }
+
+    return array.reduce((accumulator, current) => {
+        const occurrence = (current === searchElement) ? 1: 0
+        console.log(accumulator, current, searchElement);
+        return accumulator + occurrence
+    }, 0)
+}
+
+const numbers12 = [1,2,3,4];
+const max1 = getMax([1,2, 3]);
+console.log(max1);
+function getMax(array){
+    if(array.length === 0) 
+        return undefined;
+    
+    // let max = array[0];
+    // for (let i = 1; i < array.length; i++){
+    //     if(array[i] > max){
+    //         max =array [i]
+    //     }
+    //     return  max;
+    // }
+
+    return array.reduce((accumulator, current) =>{
+        // if(current > accumulator) return current;
+        // return accumulator;
+
+        return (current > accumulator) ? current : accumulator
+    },0)
+
+}
+
+const movies = [
+    {title: 'a', year: 2018, rating: 4.5},
+    {title: 'b', year: 2018, rating: 4.7},
+    {title: 'c', year: 2018, rating: 3},
+    {title: 'd', year: 2018, rating: 4.5},
+]
+
+const titles =movies
+.filter(item => item.year >= 2018 && item.rating >= 4.5)
+.sort((a, b) => a.rating - b.rating)
+.reverse()
+.map(m => m.title)
+console.log(titles)
+// filter()
+// sort()
+// reduce()
+// map()
+// splice()
+
+
+// function declaration
+// function expression 
+
+function walk(){
+    console.log('walk');
+}
+let run = function (){
+    console.log('run')
+};
+let move1 = run;
+move1()
+run();
+
+let x1 = 1;
+
+
+function sum2(a, b) {
+    let total = 0;
+    for (let value of arguments)
+    total += value;
+    return total
+}
+
+console.log(sum(1, 2))
+
+const video = {
+    title: 'a',
+    tags: ['a', 'b', 'c'],
+    showTags(){
+        this.tags.forEach((tag)  => {
+            console.log(this.title, tag)
+        })
+    }
+}
+video.showTags()
+
+// function playVideo(a, b){
+//     console.log(this);
+// }
+// playVideo.call({name:'Mosh'},1, 2);
+// playVideo.apply({name:'Mosh'}, [1,2]);
+// playVideo.bind({name: 'Mosh'})()
+
+// playVideo()
+console.log(sum([1,2,3,4]))
+function sum(...items){
+    if(items.length === 1 && Array.isArray(items[0]))
+    items = [...items[0]]
+    return items.reduce((a,b) => a+b)
+}
+
+const circle5 ={
+    radius: 2,
+    get area(){
+        return Math.PI * this.radius * this.radius;
+    }
+}
+console.log(circle.area)
+
+
+try{
+    const numbers13 = [1, 2, 3, 4];
+    const count2 = countOccurences1(null, 1)
+    console.log(count2)
+}
+catch (e){
+    console.log(e.message)
+}
+
+
+function countOccurences1(array, searchElement){
+    if(!Array.isArray(array))
+    throw new Error('Invalid array');
+    return array.reduce ((accumulator, current) => {
+        const occurence = ( current === searchElement) ? 1 : 0;
+        return accumulator + occurrence;
+    }, 0);
+}
